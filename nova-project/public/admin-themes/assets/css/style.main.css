@@ -1,0 +1,171 @@
+:root {
+    --bg-primary: #F6F3FA;
+    --text-primary:#402865;
+    --text-primary-light:#9057cd;
+
+}
+@font-face {
+    font-family: 'Montserrat-Arabic';
+    src: url(../plugins/global/fonts/montserrat-arabic/Montserrat-Medium.ttf);
+    font-display: swap;
+  }
+  /* font and background */
+  body{
+    font-family: 'Montserrat-Arabic','sans-serif' !important;
+  }
+  a{
+    color: rgba(65, 41, 102, 0.68) !important;
+  }
+  a:hover{
+    color: #402865 !important;
+  }
+  a:active{
+    color: #9057cd !important; 
+  }
+.bg-primary{
+    background-color: var(--bg-primary) !important;
+}
+.bg-primary-light{
+    background-color: var( --text-primary-light) !important;
+}
+.text-black-1{
+    color: #4b5675;
+}
+.text-primary{
+    color: var(--text-primary) !important;
+}
+.text-primary-light{
+    color: var(--text-primary-light) !important;
+}
+.text-gray-main{
+    color: #808285;
+    font-weight: 400;
+}
+.request-a-demo-bg{
+    background-image: url('../media/qsalary/bg-request-a-demo.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+.span{
+    color: #243673;
+}
+.p{
+    color: #5e443a;
+}
+.underline-light-purple{
+    text-decoration: underline #9057cd;
+}
+.pt-100{
+    padding-top: 100px;
+}
+.py-100{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.py-80px{
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.fs-70px{
+    font-size: 70px;
+}
+.fs-16px{
+    font-size: 16px;
+}
+.fs-24px{
+    font-size: 24px;
+}
+.border-gray{
+    border-color: #C4C1C740 !important;
+}
+.border-bottom-gray-1{
+    border-bottom-width: 1px;
+    border-bottom-color: #eaeaea;
+    border-bottom-style: solid;
+}
+.bg-gray-1{
+    background: #FAFAFA;
+    border: 1px solid #dddddd;
+}
+.bg-purple{
+    background: #3D1E63;
+}
+.bg-lienear-purble{
+    background-image: linear-gradient(185deg, #F6F3FA 0%, #FFFFFF 100%); 
+}
+.right{
+    right: 0;
+}
+.text-justify{
+    text-align: justify;
+}
+.download-app-bg{
+    background-image: url('../media/qsalary/app-download-bg.png');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.outline-btn-purple{
+    background: transparent;
+    color: var(--text-primary-light) !important;
+    border: 1px solid var(--text-primary-light);
+    min-width: fit-content !important;
+    white-space: nowrap;
+}
+.outline-btn-purple:hover{
+    background-color: var(--text-primary-light);
+    color: white !important;
+}
+.purple-btn{
+    background: #9057cd;
+    color: white !important;
+    cursor: pointer;
+}
+.purple-btn:hover{
+    background: #3D1E63;
+    color: white !important
+}
+.lottie-rounded-bg{
+    width: 300px;
+    z-index: 0;
+    height: 300px;
+    border-radius: 50%;
+    position: absolute;
+}
+.owl-dots {
+    text-align: center;
+    padding-top: 15px;
+  }
+  .owl-dots button.owl-dot {
+    width: 16px;
+    height: 5px;
+    border-radius: 6px;
+    display: inline-block;
+    background: #979BB7 !important;
+    margin: 0 3px;
+  }
+  .owl-dots button.owl-dot.active {
+    background-color: #575c85 !important;
+  }
+  .owl-dots button.owl-dot:focus {
+    outline: none;
+  }
+  .active>.page-link, .page-link.active {
+    background-color: #c29fe7;
+  }
+@media (max-width: 991.98px) {
+    .navbar-nav .nav-item {
+        border-bottom: 1px solid #dee2e6;
+        background-color: #f8f9fa;
+    }
+    .navbar-nav .nav-item:last-child {
+        border-bottom: none;
+    }
+    .navbar-collapse {
+        background-color: #f8f9fa;
+    }
+}
