@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\BookController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -55,3 +55,5 @@ Route::get('/privacy-policy', function () {
 Route::get('/request-a-demo', function () {
     return view('request-a-demo');
 });
+
+Route::get('/book', [BookController::class, 'index'])->name('books.index');

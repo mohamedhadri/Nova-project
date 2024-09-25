@@ -43,6 +43,9 @@
                             <li class="nav-item p-4">
                                 <x-nav-link :active="request()->is('contact')" href="/contact">Contact</x-nav-link>
                             </li>
+                            <li class="nav-item p-4">
+                                <x-nav-link :active="request()->is('books')" href="/contact">Books</x-nav-link>
+                            </li>
                         </div>
                     </div>
                     <div class="d-none d-lg-flex align-items-center">
@@ -60,6 +63,9 @@
                         </li>
                         <li class="nav-item p-4">
                             <x-nav-link :active="request()->is('contact')" href="/contact">Contact</x-nav-link>
+                        </li>
+                        <li class="nav-item p-4">
+                            <x-nav-link :active="request()->is('book')" href="/book">Books</x-nav-link>
                         </li>
                         <li class="nav-item p-4">
                             <a class="nav-link" href="#contact">
