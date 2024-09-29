@@ -4,7 +4,7 @@
     @foreach ($books as $book)
         <li>
             <h2>{{ $book['title'] }}</h2>
-            <p>Author: {{ $book['author'] }}</p>
+            <p>Author: {{ $book['authors'] }}</p>
             <p>{{ $book['description'] }}</p>
             @if ($book['thumbnail'])
                 <img src="{{ $book['thumbnail'] }}" alt="{{ $book['title'] }} thumbnail">

@@ -32,16 +32,33 @@ class BookController extends Controller
         $data = json_decode($response->getBody(), true);
 
         $books = collect($data['items'])->map(function ($item) {
-            return [
-                'title' => $item['volumeInfo']['title'],
-                'author' => collect($item['volumeInfo']['authors'])->implode(', '),
-                'description' => $item['volumeInfo']['description'],
-                'thumbnail' => $item['volumeInfo']['imageLinks']['thumbnail'] ?? null,
-                'published_date' => $item['volumeInfo']['publishedDate'],
+            $volumeInfo = $item['volumeInfo'] ?? [];
+            $bookData = [
+                'google_books_id' => $item['id'] ?? null,
+                'title' => $volumeInfo['title'] ?? null,
+                'subtitle' => $volumeInfo['subtitle'] ?? null,
+                'authors' => json_encode($volumeInfo['authors'] ?? []),
+                'description' => $volumeInfo['description'] ?? null,
+                'page_count' => $volumeInfo['pageCount'] ?? null,
+                'categories' => json_encode($volumeInfo['categories'] ?? []),
+                'average_rating' => $volumeInfo['averageRating'] ?? null,
+                'ratings_count' => $volumeInfo['ratingsCount'] ?? null,
+                'thumbnail' => $volumeInfo['imageLinks']['thumbnail'] ?? null,
+                'small_thumbnail' => $volumeInfo['imageLinks']['smallThumbnail'] ?? null,
+                'published_date' => $volumeInfo['publishedDate'] ?? null,
+                'publisher' => $volumeInfo['publisher'] ?? null,
+                'language' => $volumeInfo['language'] ?? null,
+                'preview_link' => $volumeInfo['previewLink'] ?? null,
+                'info_link' => $volumeInfo['infoLink'] ?? null,
             ];
-        });
 
-        Book::insert($books->toArray());
+            Book::updateOrCreate(
+                ['google_books_id' => $bookData['google_books_id']],
+                $bookData
+            );
+
+            return $bookData;
+        });
 
         return $books;
     }
