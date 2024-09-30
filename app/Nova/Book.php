@@ -5,7 +5,10 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use PhpParser\JsonDecoder;
 
 class Book extends Resource
 {
@@ -43,9 +46,26 @@ class Book extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('Title'),
-            Text::make('Description of the book', 'description'),
 
+            Text::make('Title')->required(),
+            Image::make('Thumbnail')
+                ->thumbnail(function ($value) {
+                    return $value; // The value is already a full URL
+                })
+                ->preview(function ($value) {
+                    return $value; // The value is already a full URL
+                })
+                ->disableDownload(),
+
+            Text::make('Subtitle'),
+
+            Number::make('ratings','ratings_count')->filterable()->hideFromIndex(),
+
+            Number::make('pages','page_count')
+            ->filterable()
+            ->required()
+            ->help('the total number of pages in a book'),
+            
         ];
     }
 
